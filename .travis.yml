@@ -15,7 +15,7 @@ install: true
 
 script:
   - ./gradlew check
-  - ./gradlew  sonarqube
+  - ./gradlew -Dsonar.login=$SONAR_TOKEN sonarqube
 
 
 
