@@ -1,5 +1,6 @@
 import client.authenticator.EmailAuthenticator.Gmail;
 import client.core.GmailClient;
+import client.core.LoginRequiredClient;
 import client.core.common.ReceivedMessage;
 import client.core.common.SendedMessage;
 import client.core.interfaces.IReceiver;
@@ -19,9 +20,7 @@ public class GmailClientTest {
     @Test
     public void tes() {
         final GmailClient client = getClient().auth();
-        profile("send()", () -> {
-            client.send(buildMessage());
-        });
+        profile("send()", () -> client.send(buildMessage()));
     }
 
     @Test
@@ -75,7 +74,7 @@ public class GmailClientTest {
 
     private GmailClient getClient() {
         return GmailClient.get()
-                .loginWith(Gmail.auth("serhiy.mazur0@gmail.com", "123456789lena"))
+                .loginWith(Gmail.auth("login", "password"))
                 .beforeLogin(() -> System.out.println("Process login..."))
                 .reconnectIfError(10000, 2)
                 .onLoginError(e -> System.out.println("Login error: " + e.getMessage()))

@@ -15,7 +15,7 @@ install: true
 
 script:
   - ./gradlew check
-  - ./gradlew -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=gof2 -Dsonar.login=$SONAR_TOKEN sonarqube
+  - ./gradlew  sonarqube
 
 
 

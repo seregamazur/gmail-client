@@ -37,6 +37,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
+sonarqube {
+    properties {
+        property "sonar.projectName", "Java GMAIL-CLIENT"
+        property "sonar.projectKey", "gmail-client"
+        property "sonar.organizationKey", "gof2"
+    }
+}
+
 
 jar {
     manifest {
