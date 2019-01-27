@@ -40,7 +40,7 @@ dependencies {
 sonarqube {
     properties {
         property "sonar.projectName", "Java GMAIL-CLIENT"
-        property "sonar.projectKey", "gmail-client"
+        property "sonar.projectKey", "GOF2_gmail-client"
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.organizationKey", "gof2"
     }
